@@ -36,7 +36,7 @@ h1{font-size:clamp(3rem,10vw,6.5rem);line-height:1;margin:15px 0;color:var(--mar
 .couple{display:grid;grid-template-columns:1fr 1fr;gap:24px}.person{overflow:hidden;border:1px solid #ead7b2;border-radius:20px;background:#fffaf1;text-align:center;box-shadow:0 10px 25px #572c1a14}.person img{display:block;width:100%;height:430px;object-fit:cover}.person:first-child img{object-position:center 35%}.person:last-child img{object-position:center 28%}.person h3{margin:15px 0 0;color:var(--maroon);font-size:1.7rem;font-weight:400}.person p{margin:3px 0 18px;color:#765d51}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.story-item{padding:22px;border:1px solid #ead7b2;border-radius:16px;background:#fffaf1}.story-item h3{color:var(--maroon);font-weight:400;margin-top:0}
 .bengali-divider{font-size:1.3rem;color:var(--maroon);letter-spacing:6px;text-align:center;margin:10px 0}
-.scratch{text-align:center}.scratchbox{position:relative;max-width:560px;height:245px;margin:22px auto 8px;border:2px solid #d8b45b;border-radius:24px;overflow:hidden;background:#fffdf7;touch-action:none}.revealed{position:absolute;inset:0;display:grid;place-items:center}.revealed small{display:block;letter-spacing:2px;text-transform:uppercase;color:#8a6c2d}.datebig{font-size:clamp(2rem,8vw,4.2rem);line-height:1.05;color:var(--maroon)}.datebig sup{font-size:.38em;line-height:0;position:relative;top:-.45em;margin-left:.03em}#scratch{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}.hint{color:#765d51;font-size:.92rem}.reset{border:0;background:none;color:var(--maroon);text-decoration:underline;cursor:pointer;font:inherit}
+.scratch{text-align:center}.scratchbox{position:relative;max-width:560px;height:245px;margin:22px auto 8px;border:2px solid #d8b45b;border-radius:24px;overflow:hidden;background:#fffdf7;touch-action:none}.revealed{position:absolute;inset:0;display:grid;place-items:center}.revealed small{display:block;letter-spacing:2px;text-transform:uppercase;color:#8a6c2d}.datebig{font-size:clamp(2rem,8vw,4.2rem);line-height:1.05;color:var(--maroon)}.datebig sup{font-size:.38em;line-height:0;position:relative;top:-.45em;margin-left:.03em}#scratch{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}.swipebox{position:relative;max-width:560px;height:245px;margin:22px auto 8px;border:2px solid #d8b45b;border-radius:24px;overflow:hidden;background:#fffdf7;touch-action:none;user-select:none}.swipe-revealed{position:absolute;inset:0;display:grid;place-items:center;text-align:center}.swipe-revealed small{display:block;letter-spacing:2px;text-transform:uppercase;color:#8a6c2d}.swipe-cover{position:absolute;inset:0;background:linear-gradient(135deg,#b98c32,#f0d994 50%,#b98c32);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:clip-path .5s ease;clip-path:inset(0 0 0 0);z-index:2;overflow:hidden}.swipe-cover:before{content:"";position:absolute;inset:-30%;background:repeating-linear-gradient(135deg,rgba(255,255,255,.16) 0 3px,transparent 3px 24px);transform:rotate(0deg)}.swipe-pattern{position:relative;font-size:2.5rem;color:#6d4a20;margin-bottom:8px}.swipe-label{position:relative;color:#6d4a20;font:700 18px Georgia,serif;letter-spacing:2px}.swipe-sub{position:relative;color:#765d51;font:14px Georgia,serif;margin-top:7px}.swipe-handle{touch-action:none;position:absolute;left:12px;bottom:50%;transform:translateY(50%);width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#fff8e6;color:#6d4a20;border:2px solid #8c6824;box-shadow:0 5px 15px #0003;font-size:42px;line-height:1;cursor:grab;z-index:3}.swipe-handle:active{cursor:grabbing}.swipebox.revealed .swipe-cover{clip-path:inset(0 100% 0 0)}.swipebox.revealed .swipe-handle{opacity:0;pointer-events:none}.swipebox.revealed .swipe-label,.swipebox.revealed .swipe-sub,.swipebox.revealed .swipe-pattern{opacity:0}.hint{border:0;background:none;color:var(--maroon);text-decoration:underline;cursor:pointer;font:inherit}
 .countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}.unit{min-width:82px;padding:14px 8px;border:1px solid #dfc88e;border-radius:12px;background:#fffaf1}.unit strong{display:block;font-size:1.8rem;color:var(--maroon)}.unit span{font-size:.72rem;text-transform:uppercase;letter-spacing:1px}
 .events{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.event{text-align:center;padding:22px;border:1px solid #ead7b2;border-radius:16px}.event h3{margin:8px 0;color:var(--maroon)}.names{text-align:center;font-size:1.15rem}.names strong{color:var(--maroon)}
 .rsvp-card{text-align:center;background:linear-gradient(145deg,#fffaf1,#fff1df)}.wa,.btn{display:inline-flex;align-items:center;gap:9px;background:var(--maroon);color:white;text-decoration:none;padding:13px 22px;border-radius:999px}.wa{background:#1f8f4a;font-family:Arial,sans-serif;font-weight:700}
@@ -81,11 +81,19 @@ h1{font-size:clamp(3rem,10vw,6.5rem);line-height:1;margin:15px 0;color:var(--mar
 <div class="story-item"><h3>One New Beginning</h3><p>With the blessings of our loved ones, we are ready to begin our journey together with love, laughter and companionship.</p></div></div>
 <p style="text-align:center;margin-bottom:0">We would be honoured to have you with us as we celebrate our <strong>Shubho Bibaho</strong>.</p></div></section>
 
-<section id="date"><div class="card scratch"><h2>A Little Surprise</h2><p><strong>Scratch here to reveal our wedding date!</strong></p>
+<section id="date"><div class="card scratch"><h2>A Little Surprise</h2><p><strong>Swipe to reveal our wedding date!</strong></p>
 <div class="countdown" id="countdown" aria-label="Countdown to the wedding"></div>
-<div class="scratchbox" id="box"><div class="revealed"><div><small>Our Wedding Day</small><div class="datebig">22<sup>nd</sup> February<br>2027</div><div>7 PM Onwards</div></div></div><canvas id="scratch"></canvas></div>
-<div class="hint" id="hint">Use your finger on mobile or mouse on desktop.</div><button class="reset" id="reset">Reset scratch card</button></div></section>
-
+<div class="swipebox" id="swipeBox">
+  <div class="swipe-revealed"><div><small>Our Wedding Day</small><div class="datebig">22<sup>nd</sup> February<br>2027</div><div>7 PM Onwards</div></div></div>
+  <div class="swipe-cover" id="swipeCover">
+    <div class="swipe-pattern">❈</div>
+    <div class="swipe-label">SWIPE TO REVEAL</div>
+    <div class="swipe-sub">our special date</div>
+    <div class="swipe-handle" id="swipeHandle">›</div>
+  </div>
+</div>
+<div class="hint" id="hint">Slide the golden handle from left to right.</div>
+<button class="reset" id="reset">Reset reveal</button></div></section>
 <section><div class="card"><h2>Wedding Celebration</h2><div class="bengali-divider">❈ শুভ বিবাহ ❈</div><div class="events">
 <div class="event">🪔<h3>The Wedding</h3>22 February 2027<br>7 PM Onwards</div>
 <div class="event">♥<h3>A New Beginning</h3>With love, laughter<br>&amp; family blessings</div>
@@ -121,15 +129,54 @@ let a=[Math.floor(d/D),Math.floor(d%D/H),Math.floor(d%H/M),Math.floor(d%M/S)];
 let e=document.getElementById("countdown");if(e)e.innerHTML=a.map((v,i)=>`<div class="unit"><strong>${v}</strong><span>${["Days","Hours","Minutes","Seconds"][i]}</span></div>`).join("")}
 countdown();setInterval(countdown,1000);
 
-const box=document.getElementById("box"),c=document.getElementById("scratch"),x=c.getContext("2d"),sample=document.createElement("canvas"),sx=sample.getContext("2d");let down=false,last={x:0,y:0},done=false,checkTimer=0;
-function size(){let r=box.getBoundingClientRect(),q=Math.min(devicePixelRatio||1,2);c.width=Math.max(1,Math.round(r.width*q));c.height=Math.max(1,Math.round(r.height*q));c.style.width=r.width+"px";c.style.height=r.height+"px";x.setTransform(q,0,0,q,0,0);cover()}
-function cover(){let w=box.clientWidth,h=box.clientHeight;x.globalCompositeOperation="source-over";let g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,"#d7b35c");g.addColorStop(.5,"#f0d994");g.addColorStop(1,"#b98c32");x.fillStyle=g;x.fillRect(0,0,w,h);x.fillStyle="rgba(255,255,255,.18)";for(let i=-h;i<w+h;i+=28){x.beginPath();x.moveTo(i,0);x.lineTo(i+h,h);x.lineTo(i+h+7,h);x.lineTo(i+7,0);x.fill()}x.fillStyle="#6d4a20";x.textAlign="center";x.textBaseline="middle";x.font="bold 25px Georgia";x.fillText("SCRATCH HERE",w/2,h/2-15);x.font="16px Georgia";x.fillText("to reveal the special date",w/2,h/2+20);x.globalCompositeOperation="destination-out";done=false;document.getElementById("hint").textContent="Use your finger on mobile or mouse on desktop."}
-function pos(e){let r=c.getBoundingClientRect(),t=e.touches?e.touches[0]:e;return{x:t.clientX-r.left,y:t.clientY-r.top}}
-function draw(e){if(!down||done)return;e.preventDefault();let p=pos(e);x.lineWidth=44;x.lineCap="round";x.lineJoin="round";x.beginPath();x.moveTo(last.x,last.y);x.lineTo(p.x,p.y);x.stroke();last=p;scheduleCheck()}
-function start(e){down=true;last=pos(e);draw(e)}function stop(){down=false;scheduleCheck(true)}
-function scheduleCheck(force=false){if(force){check();return}if(checkTimer)return;checkTimer=setTimeout(()=>{checkTimer=0;check()},220)}
-function check(){if(done)return;let w=72,h=32;sample.width=w;sample.height=h;sx.clearRect(0,0,w,h);sx.drawImage(c,0,0,w,h);let a=sx.getImageData(0,0,w,h).data,n=0,total=w*h;for(let i=3;i<a.length;i+=4)if(a[i]<40)n++;if(n>total*.48){x.clearRect(0,0,c.clientWidth,c.clientHeight);done=true;document.getElementById("hint").textContent="✨ You found it! 22nd February 2027 · 7 PM Onwards"}}
-c.addEventListener("mousedown",start);c.addEventListener("mousemove",draw);window.addEventListener("mouseup",stop);c.addEventListener("touchstart",start,{passive:false});c.addEventListener("touchmove",draw,{passive:false});window.addEventListener("touchend",stop);document.getElementById("reset").onclick=cover;window.addEventListener("resize",size);size();
+const swipeBox=document.getElementById("swipeBox"),coverEl=document.getElementById("swipeCover"),handle=document.getElementById("swipeHandle"),reset=document.getElementById("reset"),hint=document.getElementById("hint");
+let sliding=false,startX=0,startLeft=0,currentLeft=0,revealed=false;
+function maxLeft(){return Math.max(0,swipeBox.clientWidth-handle.offsetWidth-24)}
+function setHandle(left){
+  const max=maxLeft();
+  currentLeft=Math.max(0,Math.min(left,max));
+  handle.style.left=(12+currentLeft)+"px";
+  const progress=max?currentLeft/max:0;
+  // Reveal from left to right: the cover disappears behind the handle.
+  coverEl.style.clipPath=`inset(0 0 0 ${progress*100}%)`;
+}
+function reveal(){
+  revealed=true; sliding=false;
+  setHandle(maxLeft());
+  swipeBox.classList.add("revealed");
+  hint.textContent="✨ You found it! 22nd February 2027 · 7 PM Onwards";
+}
+function begin(e){
+  if(revealed)return;
+  sliding=true; startX=e.clientX; startLeft=currentLeft;
+  if(handle.setPointerCapture) handle.setPointerCapture(e.pointerId);
+  e.preventDefault();
+}
+function move(e){
+  if(!sliding||revealed)return;
+  setHandle(startLeft+(e.clientX-startX));
+  e.preventDefault();
+}
+function end(e){
+  if(!sliding)return;
+  sliding=false;
+  const max=maxLeft();
+  if(max && currentLeft/max>=0.72) reveal();
+  else setHandle(0);
+  if(e && handle.hasPointerCapture && handle.hasPointerCapture(e.pointerId)) handle.releasePointerCapture(e.pointerId);
+}
+function resetReveal(){
+  revealed=false; swipeBox.classList.remove("revealed");
+  setHandle(0);
+  hint.textContent="Slide the golden handle from left to right.";
+}
+handle.addEventListener("pointerdown",begin);
+handle.addEventListener("pointermove",move);
+handle.addEventListener("pointerup",end);
+handle.addEventListener("pointercancel",end);
+reset.onclick=resetReveal;
+window.addEventListener("resize",()=>setHandle(currentLeft));
+setHandle(0);
 </script>
 </body>
 </html>
