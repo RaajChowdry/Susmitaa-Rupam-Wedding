@@ -77,9 +77,9 @@ h1{font-size:clamp(3rem,10vw,6.5rem);line-height:1;margin:15px 0;color:var(--mar
 </div></div></section>
 
 <section id="story"><div class="card"><h2>Our Story</h2><div class="bengali-divider">শুভ বিবাহ · ❈ · শুভ বিবাহ</div>
-<div class="story-grid"><div class="story-item"><h3>Two Hearts</h3><p>Two people, two families and countless little moments have brought Susmitaa and Rupam to this beautiful chapter.</p></div>
-<div class="story-item"><h3>One New Beginning</h3><p>With the blessings of their loved ones, they are ready to begin their journey together with love, laughter and companionship.</p></div></div>
-<p style="text-align:center;margin-bottom:0">We would be honoured to have you with us as we celebrate their <strong>Shubho Bibaho</strong>.</p></div></section>
+<div class="story-grid"><div class="story-item"><h3>Two Hearts</h3><p>Two people, two families and countless little moments have brought us to this beautiful chapter.</p></div>
+<div class="story-item"><h3>One New Beginning</h3><p>With the blessings of our loved ones, we are ready to begin our journey together with love, laughter and companionship.</p></div></div>
+<p style="text-align:center;margin-bottom:0">We would be honoured to have you with us as we celebrate our <strong>Shubho Bibaho</strong>.</p></div></section>
 
 <section id="date"><div class="card scratch"><h2>A Little Surprise</h2><p><strong>Scratch here to reveal our wedding date!</strong></p>
 <div class="countdown" id="countdown" aria-label="Countdown to the wedding"></div>
@@ -93,8 +93,8 @@ h1{font-size:clamp(3rem,10vw,6.5rem);line-height:1;margin:15px 0;color:var(--mar
 </div></div></section>
 
 <section id="family"><div class="card"><h2>With Love From Our Families</h2><div class="names">
-<p><strong>Bride</strong><br>Susmitaa<br>Shri Falguni Chowdhury &amp; Smt. Shikha Chowdhury</p><div class="divider">❈</div>
-<p><strong>Groom</strong><br>Rupam<br>Shri Samir Das &amp; Smt. Purnima Das</p></div></div></section>
+<p><strong>Bride</strong><br>Susmitaa<br>Daughter Of:-<br>Shri Falguni Chowdhury &amp; Smt. Shikha Chowdhury</p><div class="divider">❈</div>
+<p><strong>Groom</strong><br>Rupam<br>Son Of:-<br>Shri Samir Das &amp; Smt. Purnima Das</p></div></div></section>
 
 <section id="rsvp"><div class="card rsvp-card"><h2>RSVP</h2><p>Your presence would make our celebration even more special.</p><p><strong>Please confirm your presence on WhatsApp</strong></p>
 <a class="wa" target="_blank" rel="noopener" href="https://wa.me/919678121366?text=Hello%20Susmitaa%20%26%20Rupam%2C%20I%20would%20love%20to%20attend%20your%20wedding.%20Best%20wishes!">💬 RSVP on WhatsApp</a>
@@ -121,13 +121,14 @@ let a=[Math.floor(d/D),Math.floor(d%D/H),Math.floor(d%H/M),Math.floor(d%M/S)];
 let e=document.getElementById("countdown");if(e)e.innerHTML=a.map((v,i)=>`<div class="unit"><strong>${v}</strong><span>${["Days","Hours","Minutes","Seconds"][i]}</span></div>`).join("")}
 countdown();setInterval(countdown,1000);
 
-const box=document.getElementById("box"),c=document.getElementById("scratch"),x=c.getContext("2d");let down=false,last={x:0,y:0},done=false;
-function size(){let r=box.getBoundingClientRect(),q=devicePixelRatio||1;c.width=r.width*q;c.height=r.height*q;c.style.width=r.width+"px";c.style.height=r.height+"px";x.setTransform(q,0,0,q,0,0);cover()}
+const box=document.getElementById("box"),c=document.getElementById("scratch"),x=c.getContext("2d"),sample=document.createElement("canvas"),sx=sample.getContext("2d");let down=false,last={x:0,y:0},done=false,checkTimer=0;
+function size(){let r=box.getBoundingClientRect(),q=Math.min(devicePixelRatio||1,2);c.width=Math.max(1,Math.round(r.width*q));c.height=Math.max(1,Math.round(r.height*q));c.style.width=r.width+"px";c.style.height=r.height+"px";x.setTransform(q,0,0,q,0,0);cover()}
 function cover(){let w=box.clientWidth,h=box.clientHeight;x.globalCompositeOperation="source-over";let g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,"#d7b35c");g.addColorStop(.5,"#f0d994");g.addColorStop(1,"#b98c32");x.fillStyle=g;x.fillRect(0,0,w,h);x.fillStyle="rgba(255,255,255,.18)";for(let i=-h;i<w+h;i+=28){x.beginPath();x.moveTo(i,0);x.lineTo(i+h,h);x.lineTo(i+h+7,h);x.lineTo(i+7,0);x.fill()}x.fillStyle="#6d4a20";x.textAlign="center";x.textBaseline="middle";x.font="bold 25px Georgia";x.fillText("SCRATCH HERE",w/2,h/2-15);x.font="16px Georgia";x.fillText("to reveal the special date",w/2,h/2+20);x.globalCompositeOperation="destination-out";done=false;document.getElementById("hint").textContent="Use your finger on mobile or mouse on desktop."}
 function pos(e){let r=c.getBoundingClientRect(),t=e.touches?e.touches[0]:e;return{x:t.clientX-r.left,y:t.clientY-r.top}}
-function draw(e){if(!down||done)return;e.preventDefault();let p=pos(e);x.lineWidth=44;x.lineCap="round";x.beginPath();x.moveTo(last.x,last.y);x.lineTo(p.x,p.y);x.stroke();last=p;check()}
-function start(e){down=true;last=pos(e);draw(e)}function stop(){down=false}
-function check(){let a=x.getImageData(0,0,c.width,c.height).data,n=0;for(let i=3;i<a.length;i+=16)if(a[i]<40)n++;if(n>(c.width*c.height/16)*.48){x.clearRect(0,0,c.clientWidth,c.clientHeight);done=true;document.getElementById("hint").textContent="✨ You found it! 22nd February 2027 · 7 PM Onwards"}}
+function draw(e){if(!down||done)return;e.preventDefault();let p=pos(e);x.lineWidth=44;x.lineCap="round";x.lineJoin="round";x.beginPath();x.moveTo(last.x,last.y);x.lineTo(p.x,p.y);x.stroke();last=p;scheduleCheck()}
+function start(e){down=true;last=pos(e);draw(e)}function stop(){down=false;scheduleCheck(true)}
+function scheduleCheck(force=false){if(force){check();return}if(checkTimer)return;checkTimer=setTimeout(()=>{checkTimer=0;check()},220)}
+function check(){if(done)return;let w=72,h=32;sample.width=w;sample.height=h;sx.clearRect(0,0,w,h);sx.drawImage(c,0,0,w,h);let a=sx.getImageData(0,0,w,h).data,n=0,total=w*h;for(let i=3;i<a.length;i+=4)if(a[i]<40)n++;if(n>total*.48){x.clearRect(0,0,c.clientWidth,c.clientHeight);done=true;document.getElementById("hint").textContent="✨ You found it! 22nd February 2027 · 7 PM Onwards"}}
 c.addEventListener("mousedown",start);c.addEventListener("mousemove",draw);window.addEventListener("mouseup",stop);c.addEventListener("touchstart",start,{passive:false});c.addEventListener("touchmove",draw,{passive:false});window.addEventListener("touchend",stop);document.getElementById("reset").onclick=cover;window.addEventListener("resize",size);size();
 </script>
 </body>
